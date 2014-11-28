@@ -8,7 +8,7 @@ function asyncTask() {
 }
 
 function errorHandler() {
-    // calling log of undefined logger, throws error
+    /** calling log of undefined logger, throws error */
     logger.log();
 }
 
