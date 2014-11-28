@@ -1,7 +1,7 @@
 
 # bugs within error handlers
 When handling error throws some errors, it woull be sillently dismissed and there is no way of knowing what's wrong.
-```
+```js
 var Q = require('q');
 function asyncTask() {
     return Q.reject();
@@ -21,7 +21,7 @@ asyncTask()
 ```
 
 To fix it, we should call `.done()` at the end of promise chain, so if there are any errors not catched yet, they will be thrown.
-```
+```js
 asyncTask()
 .fail(function() {
     errorHandler();
